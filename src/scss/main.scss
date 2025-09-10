@@ -1,0 +1,393 @@
+@use "./base/reset";
+@use "./base/globals";
+@use "./abstracts/variables" as *;
+@use "./abstracts/placeholders" as phs;
+@use "./abstracts/mixins";
+
+[class$="-icon"] {
+    @extend %rounded;
+}
+.bc-wrapper {
+    height:100vh;
+    width:100%;
+    position:absolute;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.background-container {
+    min-height:515px;
+    width:107.8%;
+    height:100vh;
+    left:-50px;
+    position: absolute;
+    overflow: hidden;
+    z-index:-1;
+
+    @include mixins.responsive("handheld") {
+        min-width:0;
+        width: 100%;
+        left:0;
+    }
+}
+
+#visual1, #visual2 {
+    position: absolute;
+    left:-9960%; right: -10000%; 
+    top: -9992%; bottom: -10000%;
+    margin: auto auto;
+    max-width: 30%;
+    max-height: 10%;
+    -webkit-transform:scale(12);
+    transform: scale(12);
+}
+
+#wave1, #wave1-target {
+    position:absolute;
+    transform: translateY(8px);
+}
+
+#visual2 {
+    display: none;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display:flex;
+}
+
+.fc {
+    align-items: center;
+}
+
+.c-invert {
+    filter:invert(1);
+}
+
+.hidden {
+    display: none;
+}
+
+.xfnt {
+    font-weight: bold;
+    font-size: $xftnts;
+
+    @include mixins.responsive("handheld") {
+        font-size: $xftnts;
+    }
+}
+
+.cfnt {
+    text-align: center;
+}
+
+.home-icon {
+    user-select: none;
+    margin-top: $spd;
+    font-size:5rem;
+}
+
+#welcome-card {
+    @include mixins.responsive("handheld") {
+        display: none;
+    }
+}
+
+#home-card {
+    background-color: transparent;
+    box-shadow: none;
+
+    > :nth-child(n+2) {
+        position: relative;
+        bottom:$lpd;
+
+        @include mixins.responsive("handheld") {
+            bottom:0;
+        }
+    }
+
+    @include mixins.responsive("handheld") {
+    }
+}
+
+.clickable {
+    cursor:pointer;
+    user-select: none;
+
+    &:hover {
+        filter: brightness(1.05);
+    }
+
+    &:active:not(:has(:active, :focus)) {
+        filter:brightness(.95);
+        transform: scale(.98);
+    }
+}
+
+.list {
+    min-height:150px;
+    &-title {
+        margin: 8px 0;
+        max-width:100%;
+        text-align:center;
+        overflow:hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.card {
+    @extend %rounded;
+
+    background-color: $pc;
+    padding: $spd;
+    &.task {
+        min-height:max-content;
+        flex:none;
+    }
+
+    &.flex {
+        flex-direction: column;
+    }
+
+    &.clickable {
+        user-select: none;
+    }
+
+    @include mixins.responsive("handheld") {
+        max-width:100%;
+    }
+}
+
+
+.buttonDiv {
+    @extend %rounded;
+
+    margin: $spd $spd $spd;
+    text-align: center;
+    width: 100px;
+    background-color: $pc;
+    border-bottom: 3px solid $sach;
+
+    @include mixins.responsive("handheld") {
+        margin: 0;
+    }
+}
+
+.edit {
+    margin-right: $spd;
+
+    &:active {
+        background-color: $pac;
+    }
+}
+
+#edit-list-form {
+    margin-bottom: $mpd;
+}
+
+.delete:active {
+    background-color: $delete;
+}
+
+.main-container {
+    height:100vh;
+    max-width: $pcmaxw;
+    grid-template-columns: 200px minmax(700px, 7fr);
+
+    @include mixins.responsive("handheld") {
+        max-height:100%;
+        width:100%;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 170px 1fr;
+    }
+}
+
+.nav-wrapper {
+    padding: $spd;
+    background-color: $sac;
+    background:linear-gradient($sac 45%, transparent);
+    box-shadow: $stdshad;
+    grid-column: 1;
+
+    @include mixins.responsive("handheld") {
+        min-height: 170px;
+        background: none;
+        background-color: $sac;
+    }
+
+    .nav-item-wrapper {
+        @include mixins.responsive("handheld") {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            & > * {
+                flex: none;
+            }
+        }
+    }
+
+    .nav-item {
+        @extend %rounded;
+
+        padding: $spd;
+        background-color: $sac;
+
+        & > * {
+            color: #000;
+            display: inline-block;
+            vertical-align: middle;
+            user-select: none;
+        }
+
+        &:active:not(.nav-main) {
+            filter: brightness(.95);
+            transform: scale(.98);
+        }
+
+        @include mixins.responsive("handheld") {
+            &:not(.nav-main) {
+                display: inline-block;
+            }
+        }
+    }
+    
+    .nav-main {
+        color:#000;
+        height:90px;
+        background-color: $pc;
+        border-bottom: 5px solid $sach;
+        margin-bottom: $lpd;
+        user-select: none;
+
+        @include mixins.responsive("handheld") {
+            justify-content: center;
+            margin-bottom: $spd;
+        }
+    }
+
+    .nav-icon {
+        width: $sis;
+        margin-right: $spd;
+
+        @include mixins.responsive("handheld") {
+            display: none;
+        }
+    }
+
+    .nav-title {
+        width: calc(100% - ($sis + $spd));
+        text-align: left;
+        
+        @include mixins.responsive("handheld") {
+            width:100%;
+        }
+    }
+}
+
+.task-icon, .list-icon {
+    padding: 4px;
+    width: $sis;
+    filter: invert(0.2);
+    border: 2px solid $ptc;
+}
+
+.content-wrapper {
+    padding: $spd;
+    grid-template-columns: 1fr;
+    grid-template-rows: fit-content 1fr;
+    gap: $spd;
+    align-content: start;
+    overflow-y:auto;
+    scrollbar-width:none;
+
+    @include mixins.responsive("handheld") {
+        min-width:0;
+    }
+}
+
+.list-wrapper {
+    height: fit-content;
+    background-color: $pac;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: $spd;
+}
+
+.content-wrapper > .card:last-child {
+    height:fit-content;
+    justify-self:stretch;
+}
+
+.grid.list-wrapper .card{
+    background-color: #fff;
+}
+
+.task-container {
+    height:67vh;
+    background-color: $pbgc;
+    margin-top: $spd;
+    gap: $spd;
+    overflow-y:scroll;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @extend %rounded;
+
+        background-color: $sach;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $pc;
+    }
+
+    @include mixins.responsive("handheld") {
+        height:auto;
+    }
+}
+
+#task-form {
+    @include mixins.responsive("handheld") {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+}
+
+.form-group {
+    width: 100%;
+}
+
+.task-options {
+    margin-top: $spd;
+}
+
+.hover-box {
+    transition: all 0.3s;
+    transform-origin:center center;
+    box-shadow: 0 0px 0px rgba(0,0,0,0);
+
+    &:hover {
+        transform:scale(1, 1.02) translate(-5px, -5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.phigh {
+    border-left: $pbrdr solid $phighc;
+}
+
+.pmod {
+    border-left: $pbrdr solid $pmodc;
+}
+
+.plow {
+    border-left: $pbrdr solid $plowc;
+}

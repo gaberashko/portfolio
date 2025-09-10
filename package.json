@@ -1,0 +1,31 @@
+{
+  "name": "Plan-It!",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest --watchAll",
+    "format": "npx prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\""
+  },
+  "keywords": [],
+  "author": "gaberashko",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/css-modules": "^1.0.5",
+    "@types/jest": "^30.0.0",
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "jest": "^30.0.5",
+    "prettier": "^3.6.2",
+    "sass": "^1.89.2",
+    "style-loader": "^4.0.0",
+    "ts-jest": "^29.4.1",
+    "ts-loader": "^9.5.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
+  }
+}
