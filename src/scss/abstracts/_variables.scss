@@ -2,48 +2,46 @@
 // COLORS
 // ==========================
 
-// Primary & secondary theme colors
-$ptc: #333333;             // Primary text color
-$itc: #e3e1ec;             // Inverted text color
-$pbgc: #cdc4e0;            // Page background color
-$pc: #f9f8f9;              // Primary container background
-$pac: #b169fa3c;           // Accent border color
-
-$sbgc: #cbc4d6;            // Secondary background
-$sc: #beafd8;              // Secondary color
-$sac: #b169fa;             // Secondary accent
-$sach: #825ebd;            // Secondary accent (darkened)
-
-// Special-purpose colors
-$pshdc:rgba(55, 55, 55, 0.8); // Shadow base color
-$phighc: #a675f3;          // High priority color
-$pmodc: #d989ec;           // Moderate priority color
-$plowc: #f0b3e1;           // Low priority color
-$delete: #e28080;          // Delete color
-
-// ==========================
-// EFFECTS & SHADOWS
-// ==========================
-
-$stdshad: 1px 1px 2px $pshdc; // Standard drop shadow
+// Primary / Secondary / Tertiary Theme Colors
+$prim-accent-100: #F5F5F5;       
+$prim-accent-200: #FFB7C5;
+$prim-accent-400: #FF69B4;
+$second-accent-200: #7b4f2c;
+$second-accent-400: #5c3a21;
+$tertiary-accent-400: #8aa07b;
+// Typography
+$text-light: #fdf8f6;
+$text-dark: #2e2e2e;
+$text-strong: #FF69B4;
 
 // ==========================
 // SIZING / SPACING / TYPOGRAPHY
 // ==========================
-$brdr: 12px;                 // Border radius for boxes
-$spd: 8px;                   // Small padding/margin
-$mpd: 32px;                  // Medium padding/margin
-$lpd: 64px;                  // Large padding/margin
+$brdr: 12px;    
+$xsmpad: 4px;                 // X-Small padding/margin
+$smpad: 8px;                  // Small padding/margin
+$mpad: 16px;                  // Medium padding/margin
+$lpad: 28px;                  // Large padding/margin
+$xlpad: 40px;                 // X-Large padding/margin
+$xxlpad: 64px;                // XX-Large padding/margin
 
-$sis: 40px;                  // Standard icon size
+$sis: 40px;                   // Standard icon size
 
-$sftnts: 1.1rem;             // Standard font size (DESKTOP)
-$xftnts: 1.6rem;             // Large font size (DESKTOP)
+$xsfnt: 0.8rem;              // Standard font size (DESKTOP)
+$sfnt: 1.2rem;              // 
+$mfnt: 1.5rem;              // Standard font size (DESKTOP)
+$lfnt: 1.7rem;              // 
+$xlfnt: 1.9rem;              // 
+$xxlfnt: 2.5rem;              // 
 
 $msftnts: 1rem;               // Standard font size (HANDHELD)
 $mxftnts: 1.4rem;             // Large font size (HANDHELD)
 
-$pbrdr: 8px;                 // Primary border width
-$pcmaxw: 1920px;             // Page/container max width
+$pbrdr: 8px;                  // Primary border width
+$pcmaxw: 1920px;              // Page/container max width
 
 $breakpoints: ("handheld": 975px)
+
+// ==========================
+// EFFECTS & SHADOWS
+// ==========================

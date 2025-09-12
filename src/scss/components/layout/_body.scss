@@ -1,0 +1,28 @@
+@use "../../abstracts/variables" as _;
+
+.body__container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+
+    & > * {
+        justify-items: center;
+        padding: _.$xlpad _.$lpad;
+    }
+
+    &__side {
+        grid-column: 1 / span 2;
+        margin: _.$mpad;
+        min-height: 100vh;
+        /* From https://css.glass */
+        background: rgba(190, 188, 214, 0.28);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(14.9px);
+        -webkit-backdrop-filter: blur(14.9px);
+        border: 1px solid rgba(190, 188, 214, 1);
+    }
+
+    &__main {
+        grid-column: 3 / span 6;
+    }
+}
