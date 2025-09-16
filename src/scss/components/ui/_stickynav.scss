@@ -7,13 +7,14 @@
     height:fit-content;
     background-color: _.$prim-accent-100;
     border: 2px solid _.$prim-accent-400;
-    border-radius: 15px;
+    border-radius: 25px;
     box-shadow:2px 2px 0px black;
     animation: dropIn cubic-bezier(0.645, 0.045, 0.355, 1) 500ms forwards;
 
     &--sticky {
         @extend .nav;
         position: sticky;
+        top:_.$mpad;
     }
 
     &__group {
@@ -23,7 +24,9 @@
 
     &__link {
         overflow-y: hidden;
+        cursor: pointer;
         height:1lh;
+        width:max-content;
         padding: 0 _.$mpad;
         margin-left:_.$smpad;
 
@@ -31,18 +34,32 @@
             overflow-y:hidden;
             position:relative;
             height: 5px;
-            top:-1lh;
+            top:calc(-1lh);
             transition: top 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
             text-align:center;
 
             &::before {
-                content: url("/public/icons/home.svg");
+                content: "";
+                filter:drop-shadow(1.5px 1.5px 0px _.$prim-accent-400);
                 display: inline-block;
                 width:20px;
                 height:20px;
-                vertical-align:-.12lh;
+                vertical-align:-.18lh;
                 margin-right: 4px;
             }
+
+            &#home::before {
+                content: url("/public/icons/home.svg");
+            }
+
+            &#about::before {
+                content: url("/public/icons/about.svg");
+            }
+
+            &#projects::before {
+                content: url("/public/icons/projects.svg");
+            }
+            
         }
 
         &:hover {

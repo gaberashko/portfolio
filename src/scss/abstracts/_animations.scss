@@ -1,9 +1,9 @@
 @keyframes dropIn {
     from {
-        transform: translateY(-100%);
+        transform: translateY(-250%);
     }
 
     to {
-        transform: translateY(100%);
+        transform: translateY(0);
     }
 }
